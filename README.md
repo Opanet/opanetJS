@@ -104,5 +104,208 @@ A function to execute when login fails.
             (response) => { console.log(response.message)} 
             );  
 
+## .logout(successHandler,failureHandler)  
+Description: Logout a user from your app.
+
+**successHandler**  
+Type: Function(response)  
+A function to execute when user successfully logout.  
+
+**failureHandler**  
+Type: Function(response)  
+A function to execute when logout fails.  
+
+    opanet.logout(
+    x=>{console.log(x.message)},
+    x=>{console.log(x.message)}
+    );  
+
+
+## .identity.getProfile(successHandler,failureHandler)  
+Description: Get the profile/kyc of a user.  
+Permission: __opanet_identity_get_profile__  
+
+**successHandler**  
+Type: Function(response)
+A function to execute when Opanet returns a user profile to your app.
+
+**failureHandler**  
+Type: Function(response)    
+A function to execute when getProfile fails.    
+
+    opanet.identity.getProfile(
+    x=>{console.log(x.firstName)},
+    x=>{console.log(x.message)}
+    );  
+
+## .identity.updateProfile(personalProfile,successHandler,failureHandler)  
+Description: Update a user profile/kyc.  
+Permission: __opanet_identity_post_profile__  
+
+**personalProfile**   
+Type: Object  
+The user profile/kyc.  
+
+**successHandler**  
+Type: Function()  
+A function to execute when updateProfile is successful.  
+
+**failureHandler**  
+Type: Function()  
+A function to execute when updateProfile fails.  
+
+The profile object can take any of the value pair. Only provide the value pair you want to update.  
+
+        Var profile = {
+            firstName: "Paul",
+            lastName: "Opoku",
+            otherNames: " ",
+            occupation: "Software Engineer",
+            gender: "male",
+            dateOfBirth: "1954-02-01",
+            email: "opoku.paul@smartgeni.com",
+            mobile: "233548070810",
+            nationality: "Ghana",
+            contact: {
+                id: "AA19540201967",
+                officeTelephone: "0322123456",
+                homeTelephone: "",
+                mobile1: "0244123456",
+                mobile2: "",
+                zipCode: "",
+                email: "secondarymail@domain.com",
+                website: null
+            },
+            location: {
+                id: "AA19540201967",
+                street: "kwamo Highway",
+                city: "Kumasi",
+                region: "Ashanti",
+                country: "Ghana"
+            }
+        }
+
+        opanet.identity.updateProfile(
+            profile,
+            x => { console.log(x.firstName) },
+            x => { console.log(x.message) }
+        );
+        
+
+## .identity.updatePhoto(image,successHandler,failureHandler)  
+Description: Update a user profile photo.  
+Permission: __opanet_identity_post_profileImage__  
+
+**image**  
+Type: string  
+Image as Base64string.  
+
+**successHandler**  
+Type: Function()  
+A function to execute when updatePhoto is successful.  
+
+**failureHandler**
+Type: Function()  
+A function to execute when updatePhoto fails.  
+
+
+## .billing.checkout(appId, token, isAppToken, invoice, successHandler, failureHandler)  
+Description: Present a secure web terminal to accept payment.  
+Permission: __opanet_billing_post_createInvoice__   
+![Opanet, Checkout](https://dwete.com/developer/assets/img/2FA/checkout_large.png) 
+
+**appId**
+Type: string  
+The unique id assigned to your app by Opanet.  
+
+**token**  
+Type: string  
+An appToken or userToken(accessToken) for authentication.  
+
+**isAppToken**  
+Type: boolean  
+True if token is an appToken; False if token is a userToken.  
+
+**invoice**
+Type: Object  
+The sales invoice to be paid.   
+
+**successHandler**  
+Type: Function()  
+A function to execute when payment is successful.  
+
+**failureHandler**  
+Type: Function()  
+A function to execute when payment fails.  
+
+    var token = "xmu9fzsfo3Q22bCHNBumMyY90i9OtdQBK+Ew8dqVof/GzyRs4QwinRW09jNXWqLxwT92YCvcerpp5rfR2TPr5zUAW57fuqkIikJ1t+qFR3NNqBX39IwqZ6LmetY5erVBFY7RrPsdxvT5ObAyUPcBLw==";
+    var appId = "git1234";
+    var invoice = {
+            merchantId: "yo082507",
+            amount: 1.00,
+            customerName: "Opoku Paul",
+            description: "Membership",
+            customerMobile: "233548079999",
+            dueDate: "2018/08/01",
+            tax: 0.00,           
+            items: [{ 
+                      "description": "Registration", 
+                      "quantity": 1, 
+                      "unitPrice": 1.00 
+                    }]
+              }      
+    opanet.billing.checkout(appId,token, true, invoice,
+                        x => { console.log(x) },
+                        x => { console.log(x) });
+       
+
+
+
+
+## .billing.widthdraw(appId, token, isAppToken, payload, successHandler, failureHandler)  
+Description: Present a secure web terminal to transfer fund from your float account (Opanet Credit) to mobile money or bank account.  
+Permission: __opanet_billing_post_withdraw__  
+![Opanet, Withdrawal](https://dwete.com/developer/assets/img/2FA/withdraw_large_bk.png) 
+
+**appId**  
+Type: string  
+The unique id assigned to your app by Opanet.  
+
+**token**  
+Type: string  
+An appToken or userToken(accessToken) for authentication.  
+
+**isAppToken**  
+Type: boolean  
+True if token is an appToken; False if token is a userToken.  
+
+**payload**  
+Type: Object  
+Amount, Narration & Expiry (Session duration of the terminal).   
+
+**successHandler**  
+Type: Function()  
+A function to execute when payment is successful.  
+
+**failureHandler**
+Type: Function()  
+A function to execute when payment fails.  
+
+    var token = "xmu9fzsfo3Q22bCHNBumMyY90i9OtdQBK+Ew8dqVof/GzyRs4QwinRW09jNXWqLxwT92YCvcerpp5rfR2TPr5zUAW57fuqkIikJ1t+qFR3NNqBX39IwqZ6LmetY5erVBFY7RrPsdxvT5ObAyUPcBLw==";
+    var appId = "git1234";
+    var payload = {
+                    "amount":1,
+                    "narration":"Live test",
+                    "expiry":60
+                   }      
+    opanet.billing.checkout(appId,token, true, payload,
+                        x => { console.log(x) },
+                        x => { console.log(x) });
+                        
+       
+
+
+
+
 
 
