@@ -339,7 +339,7 @@ Type: Function()
 A function to execute when fails.
 
 ## .wallet.group.balance(groupId,successHandler,failureHandler)  
-Description: Get personal wallet balance.  
+Description: Get group wallet balance.  
 Permission: __opanet_corporate_get_balance__    
 
 **groupId**  
@@ -355,7 +355,7 @@ Type: Function()
 A function to execute when fails.
 
 ## .wallet.group.transactionLookup(groupId, page, startDate, endDate, successHandler, failureHandler)  
-Description: Get personal wallet transaction history.  
+Description: Get group wallet transaction history.  
 Permission: __opanet_corporate_get_transactionLookup__    
 
 **groupId**  
