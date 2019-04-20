@@ -302,8 +302,85 @@ A function to execute when payment fails.
                         x => { console.log(x) },
                         x => { console.log(x) });
                         
-       
+## .wallet.personal.balance(successHandler,failureHandler)  
+Description: Get personal wallet balance.  
+Permission: __opanet_wallet_get_balance__    
 
+**successHandler**  
+Type: Function()  
+A function to execute when successful.  
+
+**failureHandler**
+Type: Function()  
+A function to execute when fails.
+
+## .wallet.personal.transactionLookup(page, startDate, endDate, successHandler, failureHandler)  
+Description: Get personal wallet transaction history.  
+Permission: __opanet_wallet_get_transactionLookup__    
+
+**page**  
+Type: integer  
+Page number, the first page being 1 (A page returns a maximum of 100 records).  
+
+**startDate**  
+Type: Date  
+Start Date.
+
+**startDate**  
+Type: Date  
+End Date.  
+
+**successHandler**  
+Type: Function()  
+A function to execute when successful.  
+
+**failureHandler**
+Type: Function()  
+A function to execute when fails.
+
+## .wallet.group.balance(groupId,successHandler,failureHandler)  
+Description: Get personal wallet balance.  
+Permission: __opanet_corporate_get_balance__    
+
+**groupId**  
+Type: string  
+The account Id of the group.
+
+**successHandler**  
+Type: Function()  
+A function to execute when successful.  
+
+**failureHandler**
+Type: Function()  
+A function to execute when fails.
+
+## .wallet.group.transactionLookup(groupId, page, startDate, endDate, successHandler, failureHandler)  
+Description: Get personal wallet transaction history.  
+Permission: __opanet_corporate_get_transactionLookup__    
+
+**groupId**  
+Type: string  
+The account Id of the group.
+
+**page**  
+Type: integer  
+Page number, the first page being 1 (A page returns a maximum of 100 records).  
+
+**startDate**  
+Type: Date  
+Start Date.
+
+**startDate**  
+Type: Date  
+End Date.  
+
+**successHandler**  
+Type: Function()  
+A function to execute when successful.  
+
+**failureHandler**
+Type: Function()  
+A function to execute when fails.
 
 
 
