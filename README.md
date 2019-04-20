@@ -320,7 +320,7 @@ Permission: __opanet_wallet_get_transactionLookup__
 
 **page**  
 Type: integer  
-Page number, the first page being 1 (A page returns a maximum of 100 records).  
+Page number, the first page being 1 (A page returns 100 records).  
 
 **startDate**  
 Type: Date  
@@ -364,7 +364,7 @@ The account Id of the group.
 
 **page**  
 Type: integer  
-Page number, the first page being 1 (A page returns a maximum of 100 records).  
+Page number, the first page being 1 (A page returns 100 records).  
 
 **startDate**  
 Type: Date  
