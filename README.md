@@ -263,7 +263,7 @@ A function to execute when payment fails.
 
 
 ## .billing.widthdraw(appId, token, isAppToken, payload, successHandler, failureHandler)  
-Description: Present a secure web terminal to transfer fund from your float account (Opanet Credit) to mobile money or bank account.  
+Description: Present a secure web terminal to transfer fund from your personal wallet (Opanet Credit) to mobile money or bank account.  
 Permission: __opanet_billing_post_withdraw__  
 ![Opanet, Withdrawal](https://dwete.com/developer/assets/img/2FA/withdraw_large_bk.png) 
 
