@@ -121,7 +121,7 @@ A function to execute when logout fails.
     );  
 
 
-## .identity.getProfile(successHandler,failureHandler)  
+## .identity.personal.getProfile(successHandler,failureHandler)  
 Description: Get the profile/kyc of a user.  
 Permission: __opanet_identity_get_profile__  
 
@@ -138,7 +138,7 @@ A function to execute when getProfile fails.
     x=>{console.log(x.message)}
     );  
 
-## .identity.updateProfile(personalProfile,successHandler,failureHandler)  
+## .identity.personal.updateProfile(personalProfile,successHandler,failureHandler)  
 Description: Update a user profile/kyc.  
 Permission: __opanet_identity_post_profile__  
 
@@ -338,13 +338,13 @@ A function to execute when successful.
 Type: Function()  
 A function to execute when fails.
 
-## .wallet.group.balance(groupId,successHandler,failureHandler)  
+## .wallet.merchant.balance(merchantId,successHandler,failureHandler)  
 Description: Get group wallet balance.  
 Permission: __opanet_corporate_get_balance__    
 
-**groupId**  
+**merchantId**  
 Type: string  
-The account Id of the group.
+The id of the merchant.
 
 **successHandler**  
 Type: Function()  
@@ -354,13 +354,13 @@ A function to execute when successful.
 Type: Function()  
 A function to execute when fails.
 
-## .wallet.group.transactionLookup(groupId, page, startDate, endDate, successHandler, failureHandler)  
+## .wallet.merchant.transactionLookup(merchantId, page, startDate, endDate, successHandler, failureHandler)  
 Description: Get group wallet transaction history.  
 Permission: __opanet_corporate_get_transactionLookup__    
 
-**groupId**  
+**merchantId**  
 Type: string  
-The account Id of the group.
+The id of the merchant.
 
 **page**  
 Type: integer  
