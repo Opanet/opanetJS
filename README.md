@@ -55,6 +55,6 @@ A function to execute when Opanet is fully loaded.
      //handler for .ready() called.
     });
 
-Read More: [Opanet Wiki](https://github.com/Opanet/opanetJS/wiki)  
+Read More: [opanetJS Wiki](https://github.com/Opanet/opanetJS/wiki)  
 Website: [Opanet.org](https://opanet.org)  
 Contact: opoku.paul@opanet.org
