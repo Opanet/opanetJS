@@ -3,7 +3,7 @@
 ### FEATURES
 * Opanet allows you to setup e-wallets enabling you to manage collections, transfers and splitting of funds between users.    
 * Make payments easy for your users by allowing them to pay with various payment methods (Visa, Master Card, Mobile Money, Dwete, E-switch, E-check). Accept payment on your website or app with our checkout form or Build any type of payment flow including recurring billing, split payment and many more with our APIs.  
-* Build Two Factor Authentication into your app and Pay only for successful conversions or a flat monthly fee for frequent logins.  
+* Build Two Factor Authentication into your app.  
 * Opanet Single-sign-on (SSO) enables a user to log in with a single ID and password to gain access to several apps across your enterprise. Opanet Single-sign-on is also your gateway to connecting with Opanet's users and services in a secure manner.  
 
 # opanetJS
